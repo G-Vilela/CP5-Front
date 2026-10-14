@@ -67,3 +67,48 @@ body {
     line-height: 1.5;
     margin-bottom: 28px;
 }
+.botao {
+    display: inline-block;
+    background: #a951d5;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 16px 26px;
+    border-radius: 8px;
+}
+
+.botao:hover {
+    background: #b965e5;
+}
+
+@media (max-width: 650px) {
+    .cabecalho {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .principal {
+        height: auto;
+        min-height: 500px;
+        padding: 30px 20px;
+    }
+
+    .apresentacao h1 {
+        font-size: 36px;
+    }
+
+    .apresentacao p {
+        font-size: 14px;
+    }
+
+    .apresentacao br {
+        display: none;
+    }
+}
