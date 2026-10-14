@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guilherme Pimentel Vilela | Desenvolvedor Full Stack</title>
+<meta name="description" content="Portfólio de Guilherme Pimentel Vilela, desenvolvedor full stack e estudante de Engenharia de Software na FIAP.">
+
+<style>
+  :root {
+    --fundo: #12141f;
+    --card: #1b1e2e;
+    --borda: #2c3046;
+    --texto: #eceef8;
+    --suave: #a0a6c2;
+    --destaque: #7c6cf0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body { background: var(--fundo); color: var(--texto); font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; line-height: 1.6; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--destaque); outline-offset: 3px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 60px 0; }
+  h2 { font-size: 1.7rem; margin-bottom: 10px; }
+  .intro { color: var(--suave); margin-bottom: 24px; }
+
+  /* Topo */
+  .topo { position: sticky; top: 0; z-index: 10; background: var(--fundo); border-bottom: 1px solid var(--borda); }
+  .topo .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; padding-bottom: 14px; }
+  .logo { font-weight: 700; text-decoration: none; }
+  .menu { display: flex; gap: 20px; flex-wrap: wrap; }
+  .menu a { text-decoration: none; color: var(--suave); font-size: 0.92rem; }
+  .menu a:hover { color: var(--texto); }
+
+  /* Botões */
+  .botao { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid var(--destaque); }
+  .botao.principal { background: var(--destaque); color: #fff; }
+  .botao.principal:hover { background: #6a5ae0; }
+  .botao.secundario { color: var(--texto); }
+  .botao.secundario:hover { background: var(--card); }
+  .botao svg { width: 18px; height: 18px; fill: currentColor; }
+  .botoes { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Início */
+  .hero { padding: 80px 0 60px; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; margin-bottom: 10px; }
+  .cargo { color: var(--destaque); font-size: 1.2rem; font-weight: 600; margin-bottom: 14px; }
+  .resumo { color: var(--suave); max-width: 55ch; margin-bottom: 26px; }
+
+  /* Sobre */
+  .sobre-grade { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start; }
+  .sobre-texto p { color: var(--suave); margin-bottom: 14px; }
+  .dados { list-style: none; background: var(--card); border: 1px solid var(--borda); border-radius: 10px; padding: 4px 20px; }
+  .dados li { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--borda); font-size: 0.93rem; }
+  .dados li:last-child { border-bottom: none; }
+  .dados li span:first-child { color: var(--suave); }
+  .dados li span:last-child { font-weight: 600; text-align: right; }
+
+  /* Habilidades */
+  .habilidades-grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .grupo { background: var(--card); border: 1px solid var(--borda); border-radius: 10px; padding: 20px; }
+  .grupo h3 { font-size: 1.05rem; margin-bottom: 12px; }
+  .grupo ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .grupo li { font-size: 0.86rem; padding: 4px 12px; border: 1px solid var(--borda); border-radius: 999px; }
+
+  /* Projetos */
+  .projeto { background: var(--card); border: 1px solid var(--borda); border-radius: 10px; padding: 24px; max-width: 520px; }
+  .projeto h3 { font-size: 1.2rem; margin-bottom: 8px; }
+  .projeto p { color: var(--suave); margin-bottom: 18px; }
+  .mais { margin-top: 18px; color: var(--suave); font-size: 0.93rem; }
+  .mais a { color: var(--texto); }
+
+  /* Contato */
+  .contatos { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .contatos a { display: block; padding: 14px 18px; background: var(--card); border: 1px solid var(--borda); border-radius: 10px; text-decoration: none; }
+  .contatos a:hover { border-color: var(--destaque); }
+  .contatos small { display: block; color: var(--suave); font-size: 0.8rem; }
+  .contatos strong { word-break: break-word; font-weight: 600; }
+
+  footer { text-align: center; padding: 28px 24px 36px; font-size: 0.88rem; color: var(--suave); border-top: 1px solid var(--borda); }
+
+  @media (max-width: 760px) {
+    section { padding: 44px 0; }
+    .hero { padding-top: 48px; }
+    .sobre-grade { grid-template-columns: 1fr; }
+    .topo .container { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <a href="#inicio" class="logo">Guilherme Vilela</a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="container">
+      <h1>Guilherme Pimentel Vilela</h1>
+      <p class="cargo">Desenvolvedor Full Stack</p>
+      <p class="resumo">Estudante de Engenharia de Software na FIAP. Construo aplicações do front ao back, com interfaces responsivas, código organizado e vontade de aprender todos os dias.</p>
+      <div class="botoes">
+        <a href="#projetos" class="botao principal">Ver projetos</a>
+        <a href="#contato" class="botao secundario">Falar comigo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+      <h2>Sobre mim</h2>
+      <div class="sobre-grade">
+        <div class="sobre-texto">
+          <!-- EDITE: troque pelo texto que preferir -->
+          <p>Sou o Guilherme, desenvolvedor full stack e estudante de Engenharia de Software na FIAP. Gosto de entender como as coisas funcionam por dentro e de cuidar do resultado por fora: organização do código e uma interface agradável de usar.</p>
+          <p>Estou sempre praticando com projetos novos e busco uma oportunidade para crescer em um time de tecnologia.</p>
+        </div>
+        <ul class="dados">
+          <li><span>Nome</span><span>Guilherme Pimentel Vilela</span></li>
+          <li><span>Área</span><span>Desenvolvedor Full Stack</span></li>
+          <li><span>Formação</span><span>Engenharia de Software, FIAP</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="container">
+      <h2>Habilidades</h2>
+      <p class="intro">Tecnologias e ferramentas que uso nos meus projetos.</p>
+      <div class="habilidades-grade">
+        <div class="grupo">
+          <h3>Front-end</h3>
+          <ul><li>HTML5</li><li>CSS3</li><li>Bootstrap 5</li><li>Tailwind CSS</li><li>Design responsivo</li></ul>
+        </div>
+        <div class="grupo">
+          <h3>Back-end e dados</h3>
+          <ul>
+            <!-- EDITE: coloque aqui suas tecnologias de back-end e banco de dados (ex.: Java, Python, Node.js, SQL) -->
+            <li>Adicione suas tecnologias</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3>Ferramentas</h3>
+          <ul><li>Git</li><li>GitHub</li><li>VS Code</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="container">
+      <h2>Projetos</h2>
+      <!-- EDITE: para adicionar outro projeto, copie o bloco <article class="projeto"> inteiro -->
+      <article class="projeto">
+        <h3>CP5-Front</h3>
+        <p>Projeto de front-end desenvolvido durante o curso de Engenharia de Software na FIAP.</p>
+        <a href="https://github.com/G-Vilela/CP5-Front" target="_blank" rel="noopener" class="botao principal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+          Ver no GitHub
+        </a>
+      </article>
+      <p class="mais">Veja também meus outros repositórios em <a href="https://github.com/G-Vilela" target="_blank" rel="noopener">github.com/G-Vilela</a>.</p>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <h2>Contato</h2>
+      <p class="intro">Vamos conversar? Escolha o canal que preferir.</p>
+      <ul class="contatos">
+        <li><a href="mailto:guilhermepvilela@gmail.com"><small>E-mail</small><strong>guilhermepvilela@gmail.com</strong></a></li>
+        <li><a href="https://wa.me/5511932763773" target="_blank" rel="noopener"><small>WhatsApp</small><strong>(11) 93276-3773</strong></a></li>
+        <li><a href="https://www.linkedin.com/in/guilherme-pimentel-vilela-774b69273/" target="_blank" rel="noopener"><small>LinkedIn</small><strong>Guilherme Pimentel Vilela</strong></a></li>
+        <li><a href="https://github.com/G-Vilela" target="_blank" rel="noopener"><small>GitHub</small><strong>github.com/G-Vilela</strong></a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Guilherme Pimentel Vilela</footer>
+
+
+</body>
+</html>
