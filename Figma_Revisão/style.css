@@ -47,3 +47,23 @@ body {
     text-decoration: none;
     font-size: 13px;
 }
+
+.principal {
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.apresentacao h1 {
+    font-size: 56px;
+    line-height: 1.06;
+    margin-bottom: 30px;
+}
+
+.apresentacao p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
